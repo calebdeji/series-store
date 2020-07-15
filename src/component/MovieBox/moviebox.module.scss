@@ -1,0 +1,39 @@
+@import "../styles/index";
+.movieBox {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--theme-preference);
+    box-shadow: var(--theme-movie-box-shadow);
+    border-radius: convertPixelToRem(10px);
+    text-align: inherit;
+    padding: 0;
+    border: none;
+}
+.movieBoxImage {
+    width: 100%;
+    object-fit: contain;
+    max-height: convertPixelToRem(300px);
+    margin: auto;
+}
+.movieBoxDescription {
+    background-color: var(--theme-body);
+    display: grid;
+    grid-auto-flow: row;
+    width: 100%;
+    row-gap: convertPixelToRem(15px);
+    padding: convertPixelToRem(10px) convertPixelToRem(5px) convertPixelToRem(20px) convertPixelToRem(10px);
+    * {
+        margin: 0;
+    }
+    h3 {
+        font-size: convertPixelToRem(16px);
+        line-height: convertPixelToRem(23px);
+        color: var(--theme-body-bold-text);
+    }
+    p {
+        font-size: convertPixelToRem(14px);
+        color: var(--theme-body-light-text);
+        display: flex;
+        align-items: center;
+    }
+}

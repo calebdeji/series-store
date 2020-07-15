@@ -1,0 +1,8 @@
+@import "../styles/index";
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(convertPixelToRem(250px), convertPixelToRem(400px)));
+    column-gap: convertPixelToRem(30px);
+    row-gap: convertPixelToRem(30px);
+    padding: convertPixelToRem(30px) 20px;
+}
