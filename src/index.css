@@ -1,13 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary-color: #8a057a;
+  --theme-preference: #ffffff;
+  --theme-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+  --theme-body: #e5e5e5;
+  --theme-body-text: rgba(0, 0, 0);
+  --switch-box: inset 10px 10px 21px #e6e6e6, inset -10px -10px 21px #ffffff;
+}
+
+[data-theme="dark"] {
+  --primary-color: #8a057a;
+  --theme-preference: #000000;
+  --theme-box-shadow: 8px 8px 18px #0b0a0a, -8px -8px 18px #110e0e;
+  --theme-body: rgba(0, 0, 0, 0.95);
+  --theme-body-text: rgba(255, 255, 255, 0.7);
+  --switch-box: inset 10px 10px 16px #131212, inset -10px -10px 16px #191818;
 }

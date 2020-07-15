@@ -1,0 +1,27 @@
+@import "../styles/_index.scss";
+
+.header {
+    width: 100%;
+    height: convertPixelToRem(60px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--theme-preference);
+    box-shadow: var(--theme-box-shadow);
+    padding: convertPixelToRem(10px);
+}
+.searchContainer {
+    display: flex;
+    height: convertPixelToRem(40px);
+}
+.searchIconContainer {
+    display: flex;
+    justify-content: center;
+    width: convertPixelToRem(50px);
+    align-items: center;
+}
+.searchInput {
+    > div {
+        height: convertPixelToRem(40px);
+    }
+}

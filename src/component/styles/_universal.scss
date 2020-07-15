@@ -1,0 +1,29 @@
+@import "responsive";
+@import "functions";
+.dontdisplaydesktop {
+    @include responsive(dontdisplaydesktop);
+}
+.dontdisplaytab {
+    @include responsive(dontdisplaytab);
+}
+.dontdisplayphone {
+    @include responsive(dontdisplayphone);
+}
+.noMargin {
+    margin: 0;
+}
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: convertPixelToRem(4px);
+    width: 100%;
+}
+progress[value]::-webkit-progress-bar {
+    background: #f6f7fb;
+    border-radius: 2px;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value {
+    border-radius: convertPixelToRem(2px);
+    // background-color: $primaryColor !important;
+}

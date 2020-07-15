@@ -1,0 +1,11 @@
+@function convertPixelToRem($pixel) {
+    $basepixel: 16px;
+    @return ($pixel / $basepixel) + rem;
+}
+@mixin hoverable {
+    @media all and (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}

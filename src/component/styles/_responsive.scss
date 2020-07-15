@@ -1,0 +1,71 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint == small_phone {
+        @media all and (max-width: 350px) {
+            @content;
+        }
+    }
+    @if $breakpoint==phone {
+        @media all and (max-width: 500px) {
+            @content;
+        }
+    }
+    @if $breakpoint == small_tab {
+        @media all and (max-width: 800px) {
+            @content;
+        }
+    }
+    @if $breakpoint == small_tab_above {
+        @media all and (min-width: 801px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tab {
+        @media all and (max-width: 1000px) {
+            @content;
+        }
+    }
+    @if $breakpoint == big_tab {
+        @media all and (min-width: 1001px) {
+            @content;
+        }
+    }
+    @if $breakpoint == small_desktop {
+        @media all and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @if $breakpoint == large_desktop {
+        @media all and (min-width: 1500px) {
+            @content;
+        }
+    }
+    @if $breakpoint == dontdisplaytab {
+        @media all and (max-width: 1000px) {
+            display: none !important;
+        }
+    }
+    @if $breakpoint == dontdisplayphone {
+        @media all and (max-width: 500px) {
+            display: none !important;
+        }
+    }
+    @if $breakpoint == dontdisplayabovesmalltab {
+        @media all and (min-width: 801px) {
+            display: none !important;
+        }
+    }
+    @if $breakpoint == dontdisplaysmalltab {
+        @media all and (max-width: 800px) {
+            display: none;
+        }
+    }
+    @if $breakpoint == dontdisplaydesktop {
+        @media all and (min-width: 1001px) {
+            display: none !important;
+        }
+    } @else {
+        @media all and (max-width: $breakpoint) {
+            @content;
+        }
+    }
+}
