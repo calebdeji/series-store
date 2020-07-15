@@ -5,4 +5,5 @@
     column-gap: convertPixelToRem(30px);
     row-gap: convertPixelToRem(30px);
     padding: convertPixelToRem(30px) 20px;
+    @include fade-in;
 }

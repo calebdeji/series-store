@@ -9,6 +9,10 @@
     background-color: var(--theme-preference);
     box-shadow: var(--theme-box-shadow);
     padding: convertPixelToRem(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
 }
 .searchContainer {
     display: flex;
@@ -23,5 +27,16 @@
 .searchInput {
     > div {
         height: convertPixelToRem(40px);
+    }
+    fieldset {
+        border-color: var(--switch-box) !important;
+    }
+    input {
+        color: var(--theme-body-bold-text) !important;
+    }
+}
+.searchIcon {
+    * {
+        fill: var(--switch-box);
     }
 }

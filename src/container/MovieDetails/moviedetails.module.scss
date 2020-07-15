@@ -1,8 +1,36 @@
 @import "../../component/styles/index";
-.mainContainer {
+.container {
+    padding: convertPixelToRem(60px) 0 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: convertPixelToRem(25px) convertPixelToRem(20px) convertPixelToRem(10px);
+}
+.choiceContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(convertPixelToRem(250px), convertPixelToRem(400px)));
-    column-gap: convertPixelToRem(30px);
-    row-gap: convertPixelToRem(30px);
-    padding: convertPixelToRem(30px) 20px;
+    grid-template-columns: repeat(auto-fit, minmax(convertPixelToRem(100px), convertPixelToRem(120px)));
+    width: 50%;
+    justify-content: flex-end;
+    column-gap: convertPixelToRem(18px);
+    align-items: center;
+}
+.selectSeason {
+    height: convertPixelToRem(40px);
+    * {
+        color: var(--theme-body-bold-text) !important;
+    }
+    fieldset {
+        border-color: var(--switch-box) !important;
+    }
+}
+
+.selectSeasonLabel {
+    color: var(--theme-body-bold-text) !important;
+}
+.episodeSlider {
+    * {
+        color: var(--theme-body-bold-text);
+    }
 }

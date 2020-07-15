@@ -13,6 +13,11 @@ export type movieBoxProps = movieAbstract & {
     season?: number;
     number?: number;
 };
+export type movieDisplayedProps = movieAbstract & {
+    _embedded: {
+        episodes: movieEpisodes[];
+    };
+};
 export type movieEpisodes = movieAbstract & {
     season: number;
     number: number;

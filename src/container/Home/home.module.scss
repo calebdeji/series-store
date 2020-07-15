@@ -1,7 +1,11 @@
 @import "../../component/styles/index";
-
+.main {
+    padding: convertPixelToRem(80px) 0 0;
+}
 .buttonBox {
     background: transparent;
     padding: 0;
     border: none;
+    display: flex;
+    align-items: stretch;
 }

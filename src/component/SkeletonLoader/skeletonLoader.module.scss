@@ -1,0 +1,38 @@
+@import "../styles/index";
+
+.container {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: convertPixelToRem(10px);
+    div {
+        background-color: var(--skeleton-loader-element);
+    }
+}
+.imagePlaceholder {
+    width: convertPixelToRem(70px);
+    height: convertPixelToRem(70px);
+}
+.descriptionHolder {
+    width: 100%;
+    height: convertPixelToRem(30px);
+}
+.animationHolder {
+    width: convertPixelToRem(10px);
+    background-color: var(--skeleton-animation) !important;
+    animation: slideAcross 0.9s ease-in infinite;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes slideAcross {
+    from {
+        left: 0;
+    }
+    to {
+        left: 95%;
+    }
+}
