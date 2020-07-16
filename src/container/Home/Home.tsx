@@ -1,73 +1,39 @@
 import React from "react";
 import MovieBox from "../../component/MovieBox/MovieBox";
-import { movieBoxProps } from "../../types/movieTypes";
 import styles from "./home.module.scss";
 import MovieGrid from "../../component/MovieGrid/MovieGrid";
-const dumyData: movieBoxProps[] = [
-    {
-        id: "789",
-        image: {
-            original: "http://static.tvmaze.com/uploads/images/original_untouched/55/139159.jpg",
-        },
-        name: "Merlin",
-        summary: "Fantasy drama based on the legend of King Arthur and merlin",
-        url: "http://www.tvmaze.com/shows/789/merlin",
-        rating: { average: 7.9 },
-    },
-    {
-        id: "780",
-        image: {
-            original: "http://static.tvmaze.com/uploads/images/original_untouched/55/139159.jpg",
-        },
-        name: "Merlin",
-        summary: "Fantasy drama based on the legend of King Arthur and merlin",
-        url: "http://www.tvmaze.com/shows/789/merlin",
-        rating: { average: 7.9 },
-    },
-    {
-        id: "781",
-        image: {
-            original: "http://static.tvmaze.com/uploads/images/original_untouched/55/139159.jpg",
-        },
-        name: "Merlin",
-        summary: "Fantasy drama based on the legend of King Arthur and merlin",
-        url: "http://www.tvmaze.com/shows/789/merlin",
-        rating: { average: 7.9 },
-    },
-    {
-        id: "782",
-        image: {
-            original: "http://static.tvmaze.com/uploads/images/original_untouched/55/139159.jpg",
-        },
-        name: "Merlin",
-        summary: "Fantasy drama based on the legend of King Arthur and merlin",
-        url: "http://www.tvmaze.com/shows/789/merlin",
-        rating: { average: 7.9 },
-    },
-    {
-        id: "783",
-        image: {
-            original: "http://static.tvmaze.com/uploads/images/original_untouched/55/139159.jpg",
-        },
-        name: "Merlin",
-        summary: "Fantasy drama based on the legend of King Arthur and merlin",
-        url: "http://www.tvmaze.com/shows/789/merlin",
-        rating: { average: 7.9 },
-    },
-];
+import useHome from "./useHome";
+import SkeletonLoader from "../../component/SkeletonLoader/SkeletonLoader";
 
 const Home = () => {
+    const { navigateToMovieDetails, isFetching, isError, errorMessage, Movies } = useHome();
     return (
-        <main>
-            <MovieGrid>
-                {dumyData.map((data) => {
-                    return (
-                        <button className={styles.buttonBox}>
-                            <MovieBox {...data} />
-                        </button>
-                    );
-                })}
-            </MovieGrid>
+        <main className={styles.main}>
+            {isFetching ? (
+                <MovieGrid>
+                    {[1, 2, 3].map((element) => {
+                        return <SkeletonLoader key={element} />;
+                    })}
+                </MovieGrid>
+            ) : isError ? (
+                <p>Error Encountered : {errorMessage}</p>
+            ) : (
+                <MovieGrid>
+                    {Movies.map((data) => {
+                        return (
+                            <button
+                                className={styles.buttonBox}
+                                onClick={() => {
+                                    navigateToMovieDetails(data.name);
+                                }}
+                                key={data.id}
+                            >
+                                <MovieBox {...data} />
+                            </button>
+                        );
+                    })}
+                </MovieGrid>
+            )}
         </main>
     );
 };

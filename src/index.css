@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    transition: background-color 0.03s ease-in;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
         "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--theme-preference);
 }
 
 :root {
@@ -18,18 +20,34 @@ body {
     --theme-body: rgba(105, 104, 104, 0.1);
     --theme-body-bold-text: #292929;
     --theme-body-light-text: #666667;
-
-    --switch-box: inset 10px 10px 21px #e6e6e6, inset -10px -10px 21px #ffffff;
+    --skeleton-loader-element: #f6f7fb;
+    --switch-box: rgba(0, 0, 0, 0.3);
+    --rating-icon-empty: rgba(0, 0, 0, 0.26);
 }
 
 [data-theme="dark"] {
     --primary-color: #8a057a;
     --theme-preference: #000000;
-    --theme-box-shadow: 8px 8px 18px #0b0a0a, -8px -8px 18px #110e0e;
+    --theme-box-shadow: 8px 8px 18px #0b0a0a, -8px -8px 18px rgba(255, 255, 255, 0.8);
+    --theme-movie-box-shadow: 0px 1px 10px 1px rgba(195, 194, 194, 0.2);
+    --theme-body-bold-text: #f1f1f1;
+    --theme-body-light-text: #b1b1b1;
+
     --theme-body: rgba(0, 0, 0, 0.95);
     --theme-body-text: rgba(255, 255, 255, 0.7);
-    --switch-box: inset 10px 10px 16px #131212, inset -10px -10px 16px #191818;
+    --switch-box: rgba(255, 255, 255, 0.3);
+    --skeleton-loader-element: rgba(255, 255, 255, 0.1);
+    --skeleton-animation: rgba(0, 0, 0, 0.1);
+    --rating-icon-empty: rgba(255, 255, 255, 0.2);
 }
+
 button:hover {
     cursor: pointer;
+}
+button {
+    background: transparent;
+    border: none;
+}
+.MuiRating-iconEmpty {
+    color: var(--rating-icon-empty) !important;
 }
