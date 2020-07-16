@@ -23,6 +23,7 @@ body {
     --skeleton-loader-element: #f6f7fb;
     --switch-box: rgba(0, 0, 0, 0.3);
     --rating-icon-empty: rgba(0, 0, 0, 0.26);
+    --skeleton-animation: rgba(255, 255, 255, 0.7);
 }
 
 [data-theme="dark"] {

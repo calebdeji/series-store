@@ -9,7 +9,7 @@ const useHeader = () => {
     useEffect(() => {
         const switchValue = getSwitch();
         if (switchValue === null) {
-            setisSwitchChecked(false);
+            setisSwitchChecked(true);
         } else {
             setisSwitchChecked(JSON.parse(switchValue));
         }
