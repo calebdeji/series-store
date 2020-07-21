@@ -18,7 +18,8 @@ const useMovieDetails = () => {
         setepisode((prev) => ({ ...prev, selectedOption: value }));
     };
     const handleSeasonChange = (event) => {
-        setseason((prev) => ({ ...prev, selectedOption: event.target.value.toString() }));
+        console.log({ hey: event.target.value });
+        setseason((prev) => ({ ...prev, selectedOption: event.target.value }));
     };
     useEffect(() => {
         if (currentDisplayedMovie?._embedded?.episodes && season.options.length !== 0) {
