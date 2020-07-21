@@ -25,6 +25,8 @@
     * {
         margin: 0;
         text-align: left;
+        max-width: 100%;
+        word-break: break-all;
     }
     h3 {
         font-size: convertPixelToRem(16px);
